@@ -1,0 +1,120 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#big-circle{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50% 50%;
+    margin:10rem auto;
+   /* transform: rotate(45deg) ; */
+   transition: transform ease 1s;
+    position: relative;
+    background-color: rgb(63, 120, 205);
+    
+}
+.outer-circle-rotation{
+    animation:
+     circle-rotate-90 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 0s 1 normal forwards,
+    circle-rotate-180 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 4s 1 normal forwards,
+    circle-rotate-270 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 6s 1 normal forwards,
+    circle-rotate-360 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 8s 1 normal forwards
+     ;
+}
+@keyframes  circle-rotate-90 {
+    100%{
+        transform: rotate(90deg);
+    }
+}
+@keyframes  circle-rotate-180 {
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes  circle-rotate-270 {
+    100%{
+        transform: rotate(270deg);
+    }
+}
+@keyframes  circle-rotate-360 {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.small-circle{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50% 50%;
+    background-color: blue;
+    color: white;
+   
+}
+.small-circle:nth-child(1){
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+   
+}
+
+
+.small-circle:nth-child(2){
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) translateX(50%);
+
+}
+.small-circle:nth-child(3){
+    bottom:0  ;
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
+    
+}
+.small-circle:nth-child(4){
+    left:0  ;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+/* outline: 1px solid red; */
+}
+
+.small-circle p{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 5;
+    /* outline: 1px solid red; */
+   
+}
+.inner-text-rotation{
+      animation:
+    reverce-circle-rotate-90 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 0s 1 normal forwards,
+   reverce-circle-rotate-180 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 4s 1 normal forwards,
+   reverce-circle-rotate-270 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 6s 1 normal forwards,
+   reverce-circle-rotate-360 .5s cubic-bezier(0.2, 0.2, 0.53, 0.5) 8s 1 normal forwards
+    ;
+}
+@keyframes  reverce-circle-rotate-90 {
+    100%{
+        transform: rotate(-90deg);  
+    }
+}
+@keyframes  reverce-circle-rotate-180 {
+    100%{
+        transform: rotate(-180deg) ;
+        /* writing-mode: vertical-lr; */
+    }
+}
+@keyframes  reverce-circle-rotate-270 {
+    100%{
+        transform: rotate(-270deg) ;
+    }
+}
+@keyframes  reverce-circle-rotate-360 {
+    100%{
+        transform: rotate(-360deg) ;
+    }
+}
